@@ -1,0 +1,30 @@
+{% include "components/header.html" %}
+
+<div class="container my-5">
+        <div class="d-flex justify-content-around mb-4">
+            <a href="{%  url 'old_cloth' %}" class="btn btn-primary">Для стариков</a>
+            <a href="{%  url 'young_cloth' %}" class="btn btn-secondary">Для молодых</a>
+            <a href="{%  url 'kinder_cloth' %}" class="btn btn-secondary">Для детей</a>
+        </div>
+
+
+    <div class="container mt-4 content">
+    <div class="row justify-content-center">
+        {% for i in clothes_old %}
+        <!-- Пример карточки книги -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 100%;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="Обложка">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-text">{{ i.price}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Добавьте дополнительные карточки книг здесь -->
+    </div>
+    {% endfor %}
+</div>
+
+
+{% include "components/footer.html" %}

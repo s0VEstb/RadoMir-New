@@ -1,0 +1,13 @@
+{% load static %}
+{% include 'components/header.html' %}
+
+        <h1>Изменить заказ</h1>
+       <form method="post" enctype="multipart/form-data">
+            <h1>Обновить заказ</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Обновить</button>
+        </form>
+  
+
+{% include 'components/footer.html' %}
